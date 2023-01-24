@@ -21,6 +21,7 @@ def getProjectId():
     ownerId = getOwnerId().get("id")
     logging.info('Getting projectId for ownerId: '+ownerId)
     response = requests.get("https://"+domino_url+"/v4/projects?name="+project_name+"&ownerId="+ownerId, auth=(user_api_key, user_api_key))
+	logging.info("Getting getProjectId"+response)
     return response.json()
 
 def buildModel():
@@ -111,7 +112,7 @@ if __name__== "__main__":
 	project_name = os.environ['PROJECT_NAME']
 	domino_url = "prod-field.cs.domino.tech"
 
-	logging.info("Starting model build...")
+	logging.info("Starting model build..."+project_name)
 	buildModelResponse = buildModel()
 	buildModelId = buildModelResponse.get("modelId")
 	buildModelVersionNumber = buildModelResponse.get("modelVersionId")
