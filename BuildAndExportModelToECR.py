@@ -123,7 +123,7 @@ if __name__== "__main__":
 	
 	exportModelResponse = exportModelIfBuilt(buildModelStatus)
 	exportId = exportModelResponse.get("exportId")
-	logging.info('exportId for model is '+exportId)
+	#logging.info('exportId for model is '+exportId)
 
 	shareExportStatus(exportId)
 
