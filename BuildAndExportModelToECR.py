@@ -109,7 +109,7 @@ def shareExportStatus(exportId):
 if __name__== "__main__":
 
 	project_name = os.environ['PROJECT_NAME']
-	project_name = "sagemaker-git-integration-project"
+	logging.info('project_name : '+project_name)
 	domino_url = "prod-field.cs.domino.tech"
 
 	logging.info("Starting model build..."+project_name)
